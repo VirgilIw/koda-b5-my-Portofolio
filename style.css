@@ -166,10 +166,6 @@ main {
 .sub-theme1 > h2 {
   text-align: center;
   margin: 20px auto 30px auto;
-  text-decoration: underline;
-  text-underline-offset: 20px;
-  text-decoration-color: goldenrod;
-  text-decoration-thickness: 3px;
 }
 
 .garis {
@@ -178,7 +174,7 @@ main {
   text-align: center;
   border-top: 3px solid goldenrod;
   width: 60px;
-  margin: -30px auto auto auto;
+  margin: -20px auto auto auto;
 }
 
 .child-project {
