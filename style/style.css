@@ -35,7 +35,7 @@ header {
 #wrapp {
   position: fixed;
   top: 10px;
-  right: 20px;
+  right: 4%;
   padding-right: 0;
   z-index: 9999;
 }
@@ -59,7 +59,7 @@ nav {
 .menu {
   position: fixed;
   top: 60px;
-  right: 10px;
+  right: 5%;
   background: white;
   padding: 15px 20px;
   display: none;
@@ -97,14 +97,15 @@ main {
   justify-content: center;
   text-align: center;
   margin-top: 100%;
-  color: #fdc435;
-  width: 300px;
+
   font-size: 2em;
 }
 
 .name {
-  font-size: 150%;
-  padding-left: 5%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 2.5em;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
@@ -127,7 +128,7 @@ main {
 
 #btn-main #btn1 {
   border: none;
-  background-color: #fdc435;
+  background-color: aqua;
   padding: 8px 24px;
   border-radius: 8px;
 }
@@ -140,24 +141,20 @@ main {
 /* Photo Mask */
 .foto {
   position: absolute;
-  top: -10px;
-  right: 0;
+  top: -100px;
   width: 100%;
-  height: 110%;
-  background-color: #ff0000;
+  height: 100%;
+  background-image: url(/images/yellow-bg.svg);
+  background-size: cover;
+  background-position: top 100px;
+  object-fit: cover;
+  object-position: center 100px;
   mask-image: url("/images/yellow-bg.svg");
   -webkit-mask-image: url("/images/yellow-bg.svg");
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-size: cover;
   -webkit-mask-size: cover;
-}
-
-.yellow-bg {
-  position: relative;
-  bottom: 80vh;
-  width: 100%;
-  z-index: 0;
 }
 
 /* ===========================
@@ -174,20 +171,55 @@ main {
   text-align: center;
   border-top: 3px solid goldenrod;
   width: 60px;
-  margin: -20px auto auto auto;
+  margin: -3% auto 2% auto;
 }
 
 .child-project {
   display: grid;
-  padding: 0 10px;
+  grid-template-rows: 1fr 1fr;
+  height: 5%;
+  padding: 2% 2% 0 2%;
+  margin-top: -40%;
+}
+
+.project-child {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 50%;
+  margin-top: -8%;
+}
+
+#projects {
+  display: grid;
+  height: 40%;
 }
 
 .project-name {
   text-align: center;
   background-color: #ffffff;
-  border-radius: 10px;
   margin-bottom: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border: 0 1px 0 0 solid black;
+  order: 2;
+}
+
+.name-project {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  padding-bottom: 10%;
+  margin-bottom: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border: 0 1px 0 0 solid black;
+  font-size: 1em;
+  & :nth-child(2) {
+    margin: 0px;
+  }
+}
+
+.project-name > p {
+  margin-top: 8%;
+  padding: 0 0.5% 0 0.5%;
 }
 
 .project-name #view-project {
@@ -202,7 +234,13 @@ main {
   width: 100%;
   height: 100%;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+#project-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
 }
 
 /* ===========================
@@ -225,7 +263,7 @@ button[type="submit"] {
   margin-top: 10px;
   justify-content: end;
   width: 20%;
-  background-color: #fdc435;
+  background-color: aqua;
   border: none;
   border-radius: 5px;
 }
@@ -240,20 +278,32 @@ main > :last-child {
   justify-content: center;
   font-size: 15px;
   color: grey;
+  margin-bottom: 0; /* Remove any bottom margin */
 }
 
 /* ===========================
    FOOTER
 =========================== */
+
+/* ===========================
+   FOOTER (FIXED)
+=========================== */
 footer {
   line-height: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 footer > svg {
   display: block;
   width: 100%;
+  height: auto;
   margin: 0;
   padding: 0;
+  /* Preserve aspect ratio while filling width */
+  min-width: 100%;
 }
 
 /* ===========================
@@ -291,7 +341,7 @@ footer > svg {
     justify-content: flex-end;
     flex-direction: row;
     background-color: transparent;
-    padding: 0;
+    margin-right: 1%;
     gap: 20px;
   }
 
@@ -299,49 +349,93 @@ footer > svg {
     font-size: 18px;
   }
 
+  .foto {
+    width: 55%;
+    right: 0;
+    height: 70%;
+    mask-size: cover;
+    object-position: center 150px;
+  }
   section {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    padding-inline: 5%;
+  }
+
+  .project-child {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding-top: 5%;
+  }
+
+  #project-img {
+    width: 50%;
+    padding-bottom: 3%;
+    height: 115%;
+    border-radius: 10px 0 0 10px;
+  }
+  .name-project {
+    width: 50%;
+    height: 100%;
+    border-radius: 0 10px 10px 0;
   }
 
   .main-1 > :first-child {
     display: flex;
-    justify-content: center;
-    margin-top: -5%;
+    justify-content: start;
+    margin-top: -10%;
     font-size: 25px;
     flex-basis: 100%;
     flex-shrink: 0;
+    padding-left: 5%;
+  }
+  .name {
+    font-size: 1.8em;
+    justify-content: start;
+    text-align: center;
+    padding-left: 8%;
   }
 
   .main-1 > :nth-child(3) {
-    width: 40%;
-    text-align: start;
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    text-align: center;
+    padding-right: 1%;
     font-family: Arial, Helvetica, sans-serif;
-  }
-
-  .foto {
-    width: 50%;
-    right: 0;
-    top: 0;
-    mask-size: contain;
+    margin-bottom: 5%;
   }
 
   .child-project {
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    padding-top: 10%;
+  }
+
+  .project-name {
+    margin-left: -6%;
+    border-radius: 10px 0 0 10px;
+  }
+  #project-img,
+  .project-name {
+    order: 0;
   }
 
   #img-project {
     position: relative;
     top: -10px;
     height: 95%;
+    margin-right: -10%;
+    border-radius: 0 10px 10px 0;
   }
 
   form {
     width: 70%;
   }
 
+  .garis {
+    margin-bottom: 2%;
+  }
   button[type="submit"] {
     right: 0;
   }
@@ -350,6 +444,9 @@ footer > svg {
     position: relative;
     height: 100%;
     bottom: -10px;
+  }
+  footer > svg {
+    height: auto;
   }
 }
 
@@ -369,25 +466,43 @@ footer > svg {
     padding: 10px 80px;
   }
 
+  .name {
+    display: flex;
+    justify-content: center;
+    width: 49%;
+    padding: 0px;
+  }
+
+  .project-name {
+    margin-left: -4%;
+    width: 100%;
+  }
   .main-1 > :first-child {
-    margin-top: -5%;
+    margin-top: -10%;
+    padding-left: 1%;
     font-size: 32px;
+  }
+  .main-1 > :nth-child(3) {
+    margin-bottom: 5%;
   }
 
   .foto {
     width: 50%;
-    height: 80%;
-    top: -20px;
+    right: 0;
+    height: 75%;
     mask-size: cover;
     object-position: center 50px;
   }
 
   .child-project {
-    padding: 20px 80px;
-    margin-top: 100px;
+    margin-top: -30%;
   }
 
   form {
     width: 40%;
+  }
+  footer > svg {
+    position: relative;
+    width: 100%;
   }
 }
